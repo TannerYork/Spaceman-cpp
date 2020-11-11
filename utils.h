@@ -3,13 +3,13 @@
 
 // Spaceman Function Prototypes
 int getWordsCount();
-std::tuple<size_t, std::string*> loadWordsList();
-std::string loadWord(size_t n, std::string* wordsList);
-bool isWordGuessed(std::string secretWord, char* lettersGuessed);
-std::string getGuessedWord(std::string secretWord, size_t n, char* lettersGuessed);
-bool isGuessInWord(std::string guess, std::string secretWord);
-bool hasBeenGuessed(std::string guess, size_t n, char* lettersGuessed);
-std::string changeWord(std::string currentWord, std::string secretWord, size_t n, std::string* wordsList);
-void startSpaceman(std::string secretWord, size_t n, std::string* spacemanWordsList);
+std::tuple<int, std::string*> loadWordsList();
+std::string loadWord(std::string* wordsList, int n);
+bool isWordGuessed(std::string secretWord, char* lettersGuessed, int n);
+void updateCurrentWord(std::string secretWord, char *lettersGuessed, int lenOfLetters, char *currentWord);
+bool isGuessInWord(char guess, std::string secretWord);
+bool hasBeenGuessed(char guess, char* lettersGuessed, int n);
+std::string changeWord(std::string currentWord, std::string secretWord, std::string* wordsList, int n);
+void startSpaceman(std::string secretWord, std::string* wordsList, int totalWords);
 
 #endif /* UTLS_H_ */
